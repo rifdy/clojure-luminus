@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="row">
+  <div class="col-sm-12">
+  	<form action="/query" method="POST">
+  	{% csrf-field %}
+  		<label for="ad_org_id">ad_org_id</label>
+  		<input id="ad_org_id" name="ad_org_id" type="text"></input>
+  		<input type="submit" value="Tes">
+	</form>
+	{{my-var1}}
+  </div>
+</div>
+{% endblock %}
