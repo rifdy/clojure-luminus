@@ -8,6 +8,7 @@
             [app.env :refer [defaults]]
             [mount.core :as mount]
             [app.extend.query :refer [query-routes]]
+            [app.extend.tutor :refer [tutor-routes]]
             ))
 
 (mount/defstate init-app
@@ -23,7 +24,10 @@
           (wrap-routes middleware/wrap-formats))
       (-> #'query-routes
           (wrap-routes middleware/wrap-csrf)
-          (wrap-routes middleware/wrap-formats))          
+          (wrap-routes middleware/wrap-formats))
+      (-> #'tutor-routes
+          (wrap-routes middleware/wrap-csrf)
+          (wrap-routes middleware/wrap-formats))
       (route/not-found
         (:body
           (error-page {:status 404
