@@ -12,9 +12,9 @@ https://clojure.org/guides/getting_started
 2. Install Leiningen
 https://leiningen.org
 
-3. CLone this repo, and go to the location path with terminal. type this command <lein run>
+3. CLone this repo, and go to the location path with terminal. type this command "lein run"
 
-4. Open your favorite browser and go to <localhost:3000>
+4. Open your favorite browser and go to "localhost:3000"
 
 
 How to Develop This
