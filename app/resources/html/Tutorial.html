@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+	<div class="col-sm-12">
+    <!--<h1>Tutorial Dasar Clojure</h1>  -->
+    	<h2>1. Operasi Aritmatika</h2>
+    		<h3>Plus/Penambahan</h3>
+    			<div id = "Note"> (+ var1 var2 ...) </div>
+	    		<form action="/tutorial" method="POST">
+	    		{% csrf-field %}
+	  				<label for="operation">try it.... (</label>
+	  				<input id="oper" name="oper" type="text" value="+" size="1" readonly></input>
+	  				<input id="var" name="var" type="text"></input>
+	  				<label for="operation2">)</label>
+	  				<input type="submit" value="boom">
+				</form>
+				<label for="operation">Result : </label>{{my-var1}}
+				
+			<h3>Minus/Pengurangan</h3>
+    			<div id = "Note"> (- var1 var2 ...) </div>
+	    		<form action="/tutorial" method="POST">
+	    		{% csrf-field %}
+	  				<label for="operation">try it.... (</label>
+	  				<input id="oper" name="oper" type="text" value="-" size="1" readonly></input>
+	  				<input id="var" name="var" type="text"></input>
+	  				<label for="operation2">)</label>
+	  				<input type="submit" value="boom">
+				</form>
+				<label for="operation">Result : </label>{{my-var2}}
+				
+			<h3>Multiply/Perkalian</h3>
+    			<div id = "Note"> (* var1 var2 ...) </div>
+	    		<form action="/tutorial" method="POST">
+	    		{% csrf-field %}
+	  				<label for="operation">try it.... (</label>
+	  				<input id="oper" name="oper" type="text" value="*" size="1" readonly></input>
+	  				<input id="var" name="var" type="text"></input>
+	  				<label for="operation2">)</label>
+	  				<input type="submit" value="boom">
+				</form>
+				<label for="operation">Result : </label>{{my-var3}}
+				
+			<h3>Divide/Pembagian</h3>
+    			<div id = "Note"> (/ var1 var2 ...) </div>
+	    		<form action="/tutorial" method="POST">
+	    		{% csrf-field %}
+	  				<label for="operation">try it.... (</label>
+	  				<input id="oper" name="oper" type="text" value="float /" size="1" readonly></input>
+	  				<input id="var" name="var" type="text"></input>
+	  				<label for="operation2">)</label>
+	  				<input type="submit" value="boom">
+				</form>
+				<label for="operation">Result : </label>{{my-var4}}
+				
+			<h3>Increment/Kenaikan</h3>
+    			<div id = "Note"> (inc var1 var2 ...) </div>
+	    		<form action="/tutorial" method="POST">
+	    		{% csrf-field %}
+	  				<label for="operation">try it.... (</label>
+	  				<input id="oper" name="oper" type="text" value="inc" size="1" readonly></input>
+	  				<input id="var" name="var" type="text"></input>
+	  				<label for="operation2">)</label>
+	  				<input type="submit" value="boom">
+				</form>
+				<label for="operation">Result : </label>{{my-var5}}
+				
+			<h3>Decrement/Penurunan</h3>
+    			<div id = "Note"> (dec var1 var2 ...) </div>
+	    		<form action="/tutorial" method="POST">
+	    		{% csrf-field %}
+	  				<label for="operation">try it.... (</label>
+	  				<input id="oper" name="oper" type="text" value="dec" size="1" readonly></input>
+	  				<input id="var" name="var" type="text"></input>
+	  				<label for="operation2">)</label>
+	  				<input type="submit" value="boom">
+				</form>
+				<label for="operation">Result : </label>{{my-var6}}
+				
+			<h3>Maximum/Terbesar</h3>
+    			<div id = "Note"> (max var1 var2 ...) </div>
+	    		<form action="/tutorial" method="POST">
+	    		{% csrf-field %}
+	  				<label for="operation">try it.... (</label>
+	  				<input id="oper" name="oper" type="text" value="max" size="1" readonly></input>
+	  				<input id="var" name="var" type="text"></input>
+	  				<label for="operation2">)</label>
+	  				<input type="submit" value="boom">
+				</form>
+				<label for="operation">Result : </label>{{my-var7}}
+				
+			<h3>Minimum/Terkecil</h3>
+    			<div id = "Note"> (min var1 var2 ...) </div>
+	    		<form action="/tutorial" method="POST">
+	    		{% csrf-field %}
+	  				<label for="operation">try it.... (</label>
+	  				<input id="oper" name="oper" type="text" value="min" size="1" readonly></input>
+	  				<input id="var" name="var" type="text"></input>
+	  				<label for="operation2">)</label>
+	  				<input type="submit" value="boom">
+				</form>
+				<label for="operation">Result : </label>{{my-var8}}
+	</div>
+</div>
+{% endblock %}
