@@ -22,9 +22,9 @@
       (-> #'home-routes
           (wrap-routes middleware/wrap-csrf)
           (wrap-routes middleware/wrap-formats))
-      (-> #'query-routes
-          (wrap-routes middleware/wrap-csrf)
-          (wrap-routes middleware/wrap-formats))
+;      (-> #'query-routes
+;          (wrap-routes middleware/wrap-csrf)
+;          (wrap-routes middleware/wrap-formats))
       (-> #'tutor-routes
           (wrap-routes middleware/wrap-csrf)
           (wrap-routes middleware/wrap-formats))

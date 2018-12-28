@@ -7,7 +7,8 @@
 
 (defn query-page [ad_org_id]
   (layout/render "query.html"
-    {:my-var1 (db/get-organization_mapping {:ad_org_id ad_org_id})}))
+    {:my-var1 (db/get-organization_mapping {:ad_org_id ad_org_id})}
+    ))
 
 (defn parse-int [number-string]
   (try (Integer/parseInt number-string)

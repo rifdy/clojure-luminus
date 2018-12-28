@@ -6,40 +6,44 @@
             [clojure.java.io :as io]
             [clojure.string :as str]))
 
-(defn operation [oper var]
+(defn operation [oper vari]
   (layout/render "Tutorial.html"
       (cond
         (= oper "+") {:my-var1 
-                      (runthis oper var)}
+                      (try 
+                        (apply(resolve(symbol oper)) (map #(Integer/parseInt %)(str/split vari #" ")))
+                        (catch Exception e nil))}
         (= oper "-") {:my-var2 
-                      (runthis oper var)}
+                      (try 
+                        (apply(resolve(symbol oper)) (map #(Integer/parseInt %)(str/split vari #" ")))
+                        (catch Exception e nil))}
         (= oper "*") {:my-var3 
-                      (runthis oper var)}
+                      (try 
+                        (apply(resolve(symbol oper)) (map #(Integer/parseInt %)(str/split vari #" ")))
+                        (catch Exception e nil))}
         (= oper "/") {:my-var4 
-                      (runthis oper var)}
+                      (try 
+                        (apply(resolve(symbol oper)) (map #(Double/parseDouble %)(str/split vari #" ")))
+                        (catch Exception e nil))}
         (= oper "inc") {:my-var5 
-                        (runthis oper var)}
+                        (try 
+                        (apply(resolve(symbol oper)) (map #(Integer/parseInt %)(str/split vari #" ")))
+                        (catch Exception e nil))}
         (= oper "dec") {:my-var6 
-                        (runthis oper var)}
+                        (try 
+                        (apply(resolve(symbol oper)) (map #(Integer/parseInt %)(str/split vari #" ")))
+                        (catch Exception e nil))}
         (= oper "max") {:my-var7 
-                        (runthis oper var)}
+                        (try 
+                        (apply(resolve(symbol oper)) (map #(Integer/parseInt %)(str/split vari #" ")))
+                        (catch Exception e nil))}
         (= oper "min") {:my-var8 
-                        (runthis oper var)}
+                        (try 
+                        (apply(resolve(symbol oper)) (map #(Integer/parseInt %)(str/split vari #" ")))
+                        (catch Exception e nil))}
       )
     ))
 
-(defn runthis [oper var]
-  (try 
-   (apply(resolve(symbol oper)) (str-to-ints var))
-   (catch Exception e nil)))
-
-(defn str-to-ints [var]
-  (map #(Integer/parseInt %)(str/split var #" ")))
-
-(defn parse-int [number-string]
-  (try (Integer/parseInt number-string)
-    (catch Exception e nil)))
-
 (defroutes tutor-routes
-  (ANY "/tutorial" [oper var] (operation oper var))
+  (ANY "/tutorial" [oper vari] (operation oper vari))
   )
